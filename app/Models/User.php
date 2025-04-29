@@ -52,7 +52,7 @@ class User extends Authenticatable
         ];
     }
 
-    //User with categories
+    //User with categories relation changes
     public function categories(){
         return $this->hasMany(Category::class);
     }
