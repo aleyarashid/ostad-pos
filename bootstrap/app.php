@@ -15,6 +15,11 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->web(append: [
             HandleInertiaRequests::class,
             ]);
+            $middleware->validateCsrfTokens(except: [
+                '*',
+                //'http://example.com/foo/bar',
+                //'http://example.com/foo/*',
+            ]);
            
     })
     ->withExceptions(function (Exceptions $exceptions) {
